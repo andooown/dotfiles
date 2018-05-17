@@ -86,7 +86,10 @@ initialize() {
         local -a missing_formulae
         local -a desired_formulae=(
             'git'
+            'tig'
             'zsh'
+            'mas'
+            'swiftlint'
         )
 
         local installed=`brew list`
