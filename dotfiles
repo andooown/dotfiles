@@ -90,6 +90,9 @@ initialize() {
       'zsh'
       'mas'
       'swiftlint'
+      'ghq'
+      'peco'
+      'hub'
     )
 
     local installed=`brew list`

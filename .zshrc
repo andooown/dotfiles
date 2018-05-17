@@ -20,3 +20,7 @@ alias ll='ls -hl'
 # AWS CLI
 source /usr/local/bin/aws_zsh_completer.sh
 
+# Load other config files
+if [ -e $HOME/.zsh_function_keybind ]; then
+  source $HOME/.zsh_function_keybind
+fi
