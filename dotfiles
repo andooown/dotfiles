@@ -124,9 +124,19 @@ initialize() {
     chsh -s /usr/local/bin/zsh
   fi
 
-  echo "Installing prezto..."
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-  echo "$(tput setaf 2)Installed prezto ✔︎$(tput sgr0)"
+  if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
+    echo "Installing prezto..."
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    echo "$(tput setaf 2)Installed prezto ✔︎$(tput sgr0)"
+
+    echo "Installing powerline fonts..."
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    ./install.sh
+    cd ..
+    rm -rf fonts
+    echo "$(tput setaf 2)Installed powerline fonts ✔︎$(tput sgr0)"
+  fi
 
   echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
 }
