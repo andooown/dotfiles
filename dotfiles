@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -e
 
 DOTFILES_DIR=${HOME}/.dotfiles
 DOTFILES_TARBALL="https://github.com/andooown/dotfiles/tarball/master"
