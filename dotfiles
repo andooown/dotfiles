@@ -123,6 +123,11 @@ initialize() {
         fi
         chsh -s /usr/local/bin/zsh
     fi
+
+    echo "Installing prezto..."
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    echo "$(tput setaf 2)Installed prezto ✔︎$(tput sgr0)"
+
     echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
 }
 
