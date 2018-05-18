@@ -1,0 +1,150 @@
+#!/bin/bash
+set -eu
+
+DOTFILES_DIR=${HOME}/.dotfiles
+DOTFILES_TARBALL="https://github.com/andooown/dotfiles/tarball/master"
+REMOTE_URL="git@github.com:andooown/dotfiles.git"
+
+
+has() {
+  type "$1" > /dev/null 2>&1
+}
+
+usage() {
+  name=`basename $0`
+  cat <<EOF
+Usage:
+    $name [arguments] [command]
+Commands:
+    deploy
+    initialize
+Arguments:
+    -f $(tput setaf 1)** warning **$(tput sgr0) Overwrite dotfiles.
+    -h Print help (this message)
+EOF
+
+  exit 1
+}
+
+
+while getopts :f:h opt; do
+  case ${opt} in
+    f)
+      OVERWRITE=true
+      ;;
+    h)
+      usage
+      ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+
+if [ -n "${OVERWRITE}" -o ! -d ${DOTFILES_DIR} ]; then
+  echo "Downloading dotfiles..."
+  rm -rf ${DOTFILES_DIR}
+  mkdir ${DOTFILES_DIR}
+
+  if type "git" > /dev/null 2>&1; then
+    git clone --recursive "${REMOTE_URL}" "${DOTFILES_DIR}"
+  else
+    curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOTFILES_TARBALL}
+    tar -zxf ${HOME}/dotfiles.tar.gz --strip-components 1 -C ${DOTFILES_DIR}
+    rm -f ${HOME}/dotfiles.tar.gz
+  fi
+
+  echo $(tput setaf 2)Download dotfiles complete!. ✔︎$(tput sgr0)
+fi
+
+
+link_files() {
+  cd ${DOTFILES_DIR}
+
+  for f in .??*
+  do
+    [[ ${f} = ".git" ]] && continue
+    [[ ${f} = ".gitignore" ]] && continue
+    ln -snfv ${DOTFILES_DIR}/${f} ${HOME}/${f}
+  done
+  echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
+}
+
+initialize() {
+  if has "brew"; then
+    echo "$(tput setaf 2)Already installed Homebrew ✔︎$(tput sgr0)"
+  else
+    echo "Installing Homebrew..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  if has "brew"; then
+    echo "Updating Homebrew..."
+    brew update && brew upgrade
+    [[ $? ]] && echo "$(tput setaf 2)Update Homebrew complete. ✔︎$(tput sgr0)"
+
+    local list_formulae
+    local -a missing_formulae
+    local -a desired_formulae=(
+      'git'
+      'tig'
+      'zsh'
+      'mas'
+      'swiftlint'
+    )
+
+    local installed=`brew list`
+    for index in ${!desired_formulae[*]}
+    do
+      local formula=`echo ${desired_formulae[$index]} | cut -d' ' -f 1`
+      if [[ -z `echo "${installed}" | grep "^${formula}$"` ]]; then
+        missing_formulae=("${missing_formulae[@]}" "${desired_formulae[$index]}")
+      else
+        echo "Installed ${formula}"
+      fi
+    done
+
+    if [[ "$missing_formulae" ]]; then
+      list_formulae=$( printf "%s " "${missing_formulae[@]}" )
+
+      echo "Installing missing Homebrew formulae..."
+      brew install $list_formulae
+
+      [[ $? ]] && echo "$(tput setaf 2)Installed missing formulae ✔︎$(tput sgr0)"
+    fi
+
+    echo "Cleanup Homebrew..."
+    brew cleanup
+    echo "$(tput setaf 2)Cleanup Homebrew complete. ✔︎$(tput sgr0)"
+  fi
+
+  if [ ${SHELL} != "/usr/local/bin/zsh"  ]; then
+    if [ -z `grep "/usr/local/bin/zsh" /etc/shells` ]; then
+      echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+    fi
+    chsh -s /usr/local/bin/zsh
+  fi
+
+  echo "Installing prezto..."
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  echo "$(tput setaf 2)Installed prezto ✔︎$(tput sgr0)"
+
+  echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
+}
+
+
+command=$1
+[ $# -gt 0 ] && shift
+
+case $command in
+  deploy)
+    link_files
+    ;;
+  init*)
+    initialize
+    ;;
+  *)
+    usage
+    ;;
+esac
+
+exit 0
