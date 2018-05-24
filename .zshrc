@@ -17,7 +17,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 # pipenv
-PIPENV_VENV_IN_PROJECT=true
+export PIPENV_VENV_IN_PROJECT=true
 
 # Customize to your needs...
 alias ls='ls -G'
