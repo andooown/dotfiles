@@ -149,6 +149,12 @@ initialize() {
     echo "$(tput setaf 2)Installed pyenv ✔︎$(tput sgr0)"
   fi
 
+  if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then
+    echo "Installing tpm..."
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    echo "$(tput setaf 2)Installed tpm ✔︎$(tput sgr0)"
+  fi
+
   echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
 }
 
