@@ -94,6 +94,7 @@ initialize() {
       'peco'
       'hub'
       'pipenv'
+      'tmux'
     )
 
     local installed=`brew list`
