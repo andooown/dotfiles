@@ -45,7 +45,7 @@ if [ -n "${OVERWRITE}" -o ! -d ${DOTFILES_DIR} ]; then
   rm -rf ${DOTFILES_DIR}
   mkdir ${DOTFILES_DIR}
 
-  if type "git" > /dev/null 2>&1; then
+  if has "git"; then
     git clone --recursive "${REMOTE_URL}" "${DOTFILES_DIR}"
   else
     curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOTFILES_TARBALL}
