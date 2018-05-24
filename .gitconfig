@@ -1,0 +1,16 @@
+[core]
+	excludesfile = /Users/yoshikazu.ando/.gitignore_global
+	editor = vim -c \"set fenc=utf-8\"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = andooown
+	email = andooown.dev@gmail.com
+[commit]
+	template = /Users/yoshikazu.ando/.stCommitMsg
+[ghq]
+	root = ~/ghq

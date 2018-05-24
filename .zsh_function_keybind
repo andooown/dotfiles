@@ -1,0 +1,35 @@
+# peco で履歴を検索
+function peco-select-history() {
+  BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
+  CURSOR=$#BUFFER
+
+  zle reset-prompt
+  zle accept-line
+}
+zle -N peco-select-history
+
+# ghq の一覧を peco で選択して移動
+function peco-select-ghq() {
+  local selected=$(ghq list | peco --prompt='ghq list>'| awk -F ' ' '{print $NF}' | tr '\n' ' ')
+  BUFFER="cd $(ghq root)/$selected"
+  CURSOR=$#BUFFER
+
+  zle reset-prompt
+  zle accept-line
+}
+# hub で ghq のページを開く
+function peco-open-ghq-page() {
+  local selected=$(ghq list | peco --prompt='ghq list>' | cut -d "/" -f 2,3)
+  BUFFER="hub browse $selected"
+  CURSOR=$#BUFFER
+
+  zle reset-prompt
+  zle accept-line
+}
+zle -N peco-select-ghq
+zle -N peco-open-ghq-page
+
+
+bindkey '^r' peco-select-history  # peco で履歴を検索
+bindkey '^g^g' peco-select-ghq    # peco で ghq の一覧を 選択して移動
+bindkey '^g^h' peco-open-ghq-page # hub で ghq のページを開く
