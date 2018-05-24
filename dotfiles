@@ -93,6 +93,7 @@ initialize() {
       'ghq'
       'peco'
       'hub'
+      'pipenv'
     )
 
     local installed=`brew list`
