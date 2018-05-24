@@ -4,7 +4,6 @@ function peco-select-history() {
   CURSOR=$#BUFFER
 
   zle reset-prompt
-  zle accept-line
 }
 zle -N peco-select-history
 
@@ -20,6 +19,7 @@ function peco-insert-ghq-list() {
   zle reset-prompt
 }
 zle -N peco-insert-ghq-list
+
 # hub で ghq のページを開く
 function peco-open-ghq-page() {
   local selected=$(ghq list | peco --prompt='ghq list>' | cut -d "/" -f 2,3)
