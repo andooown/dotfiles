@@ -9,27 +9,29 @@ function peco-select-history() {
 zle -N peco-select-history
 
 # ghq の一覧を peco で選択して移動
-function peco-select-ghq() {
-  local selected=$(ghq list | peco --prompt='ghq list>'| awk -F ' ' '{print $NF}' | tr '\n' ' ')
-  BUFFER="cd $(ghq root)/$selected"
-  CURSOR=$#BUFFER
-
-  zle reset-prompt
-  zle accept-line
+function peco-select-ghq-list(){
+  ghq list | peco --prompt='ghq list>'| awk -F ' ' '{print $NF}' | tr '\n' ' '
 }
+zle -N peco-select-ghq-list
+function peco-insert-ghq-list() {
+  LBUFFER="cd $(ghq root)/$(peco-select-ghq-list)"
+  CURSOR=$#LBUFFER
+  
+  zle reset-prompt
+}
+zle -N peco-insert-ghq-list
 # hub で ghq のページを開く
 function peco-open-ghq-page() {
   local selected=$(ghq list | peco --prompt='ghq list>' | cut -d "/" -f 2,3)
-  BUFFER="hub browse $selected"
-  CURSOR=$#BUFFER
+  LBUFFER="hub browse $selected"
+  CURSOR=$#LBUFFER
 
   zle reset-prompt
   zle accept-line
 }
-zle -N peco-select-ghq
 zle -N peco-open-ghq-page
 
 
-bindkey '^r' peco-select-history  # peco で履歴を検索
-bindkey '^g^g' peco-select-ghq    # peco で ghq の一覧を 選択して移動
-bindkey '^g^h' peco-open-ghq-page # hub で ghq のページを開く
+bindkey '^r' peco-select-history    # peco で履歴を検索
+bindkey '^g^g' peco-insert-ghq-list # peco で ghq の一覧を 選択して移動
+bindkey '^g^h' peco-open-ghq-page   # hub で ghq のページを開く
