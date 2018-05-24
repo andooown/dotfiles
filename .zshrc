@@ -21,6 +21,9 @@ alias ll='ls -hl'
 source /usr/local/bin/aws_zsh_completer.sh
 
 # Load other config files
-if [ -e $HOME/.zsh_function_keybind ]; then
-  source $HOME/.zsh_function_keybind
+if [ -e $HOME/.zsh_function ]; then
+  source $HOME/.zsh_function
+fi
+if [ -e $HOME/.zsh_keybind ]; then
+  source $HOME/.zsh_keybind
 fi

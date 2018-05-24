@@ -30,8 +30,3 @@ function peco-open-ghq-page() {
   zle accept-line
 }
 zle -N peco-open-ghq-page
-
-
-bindkey '^r' peco-select-history    # peco で履歴を検索
-bindkey '^g^g' peco-insert-ghq-list # peco で ghq の一覧を 選択して移動
-bindkey '^g^h' peco-open-ghq-page   # hub で ghq のページを開く
