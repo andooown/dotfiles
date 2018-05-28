@@ -23,9 +23,6 @@ export PIPENV_VENV_IN_PROJECT=true
 alias ls='ls -G'
 alias ll='ls -hl'
 
-# AWS CLI
-source /usr/local/bin/aws_zsh_completer.sh
-
 # Load other config files
 if [ -e $HOME/.zsh_function ]; then
   source $HOME/.zsh_function
