@@ -33,3 +33,6 @@ fi
 if [ -e $HOME/.zsh_keybind ]; then
   source $HOME/.zsh_keybind
 fi
+if [ -e $HOME/.zsh_local_env ]; then
+  source $HOME/.zsh_local_env
+fi

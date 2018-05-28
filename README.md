@@ -12,3 +12,11 @@ $ ./dotfiles deploy
 ```
 $ ./dotfiles -f init
 ```
+
+### 環境変数
+マシンごとの環境変数の設定は`~/.zsh_local_env`を作成し、その中に記述してください。
+以下は`~/.zsh_local_env`の例です。
+```
+export HTTP_PROXY="http://hogehoge:8080"
+export HTTPS_PROXY="http://hogehoge:8080"
+```
