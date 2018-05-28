@@ -93,6 +93,7 @@ initialize() {
       'ghq'
       'peco'
       'hub'
+      'rbenv'
       'pyenv'
       'pipenv'
       'tmux'
