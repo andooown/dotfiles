@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/yoshikazu.ando/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim -c \"set fenc=utf-8\"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -10,7 +10,5 @@
 [user]
 	name = andooown
 	email = andooown.dev@gmail.com
-[commit]
-	template = /Users/yoshikazu.ando/.stCommitMsg
 [ghq]
 	root = ~/ghq
