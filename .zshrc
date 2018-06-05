@@ -11,7 +11,14 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # zsh-completions
-fpath=(path/to/zsh-completions/src $fpath)
+for d in "/share/zsh-completions" "/share/zsh/zsh-site-functions";do
+  brew_completion=$(brew --prefix 2>/dev/null)$d
+  if [ $? -eq 0 ] && [ -d "$brew_completion" ];then
+    fpath=($brew_completion $fpath)
+  fi
+done
+autoload -Uz compinit
+compinit
 
 # rbenv
 eval "$(rbenv init -)"
