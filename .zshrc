@@ -20,6 +20,12 @@ done
 autoload -Uz compinit
 compinit
 
+# go
+if [ -x "`which go`" ]; then
+  export GOPATH=$HOME/go
+  export PATH="$GOPATH/bin:$PATH"
+fi
+
 # rbenv
 eval "$(rbenv init -)"
 # pyenv
