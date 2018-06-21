@@ -35,6 +35,9 @@ eval "$(pyenv init -)"
 # pipenv
 export PIPENV_VENV_IN_PROJECT=true
 eval "$(pipenv --completion)"
+# nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
 
 # Customize to your needs...
 alias ls='ls -G'

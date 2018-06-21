@@ -97,6 +97,7 @@ initialize() {
       'rbenv'
       'pyenv'
       'pipenv'
+      'nodenv'
       'tmux'
       'awscli'
     )
