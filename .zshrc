@@ -47,6 +47,9 @@ alias ls='ls -G'
 alias ll='ls -hl'
 
 # Load other config files
+if [ -e $HOME/.zsh_prompt ]; then
+  source $HOME/.zsh_prompt
+fi
 if [ -e $HOME/.zsh_function ]; then
   source $HOME/.zsh_function
 fi
