@@ -5,8 +5,8 @@ autoload -Uz vcs_info
 autoload -Uz colors; colors
 
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "${fg[green]}●${reset_color}"
-zstyle ':vcs_info:git:*' unstagedstr "${fg[red]}●${reset_color}"
+zstyle ':vcs_info:git:*' stagedstr "%{${fg[green]}%}●%{${reset_color}%}"
+zstyle ':vcs_info:git:*' unstagedstr "%{${fg[red]}%}●%{${reset_color}%}"
 zstyle ':vcs_info:*' formats "(%b%c%u%)"
 zstyle ':vcs_info:*' actionformats '(%b|%a)'
 
@@ -16,5 +16,5 @@ function precmd_vcs_info () {
 add-zsh-hook precmd precmd_vcs_info
 
 PROMPT='
-${fg[yellow]}%n${reset_color} at ${fg[magenta]}%m${reset_color} in ${fg[cyan]}%~${reset_color}
-%(?.${fg[green]}.${fg[blue]})%(?!o(*^ヮ^*%)o!o(ＴヘＴ%)o)${reset_color} ${vcs_info_msg_0_}> '
+%{${fg[yellow]}%}%n%{${reset_color}%} at %{${fg[magenta]}%}%m%{${reset_color}%} in %{${fg[cyan]}%}%~%{${reset_color}%}
+%(?.%{${fg[green]}%}.%{${fg[blue]}%})%(?!o(*^o^*%)o!o(T-T%)o)%{${reset_color}%} ${vcs_info_msg_0_}> '
