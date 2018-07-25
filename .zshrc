@@ -59,3 +59,7 @@ fi
 if [ -e $HOME/.zsh_local_env ]; then
   source $HOME/.zsh_local_env
 fi
+
+# alias
+alias sl='sl'
+
