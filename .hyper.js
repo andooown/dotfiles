@@ -123,24 +123,6 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
-
-    // hyperterm-overlay
-    overlay: {
-      alwaysOnTop: true,
-      animate: false,
-      hasShadow: false,
-      hideDock: false,
-      hideOnBlur: false,
-      hotkeys: ['Option+Space'],
-      position: 'top',
-      primaryDisplay: false,
-      resizable: true,
-      startAlone: false,
-      startup: false,
-      size: 1.0,
-      tray: true,
-      unique: true
-    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -151,7 +133,6 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hyperterm-material',
-    'hyperterm-overlay',
     'hypercwd'
   ],
 
