@@ -123,6 +123,9 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    // hyper-confirm
+    confirmQuit: true,
   },
 
   // a list of plugins to fetch and install from npm
@@ -133,7 +136,8 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hyperterm-material',
-    'hypercwd'
+    'hypercwd',
+    'hyper-confirm'
   ],
 
   // in development, you can create a directory under
