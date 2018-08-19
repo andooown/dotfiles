@@ -30,6 +30,7 @@ if [ -x "`which go`" ]; then
 fi
 
 # rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
