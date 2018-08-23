@@ -29,6 +29,10 @@ if [ -x "`which go`" ]; then
   export PATH="$GOPATH/bin:$PATH"
 fi
 
+# goenv
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$GOENV_ROOT/bin:$PATH
+eval "$(goenv init -)"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
