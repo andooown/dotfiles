@@ -11,4 +11,4 @@
 	name = andooown
 	email = andooown.dev@gmail.com
 [ghq]
-	root = $GOPATH/src
+	root = ~/go/src
