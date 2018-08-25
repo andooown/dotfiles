@@ -11,4 +11,4 @@
 	name = andooown
 	email = andooown.dev@gmail.com
 [ghq]
-	root = ~/ghq
+	root = ~/go/src

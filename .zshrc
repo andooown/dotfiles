@@ -24,11 +24,13 @@ autoload -Uz compinit
 compinit
 
 # go
-if [ -x "`which go`" ]; then
-  export GOPATH=$HOME/go
-  export PATH="$GOPATH/bin:$PATH"
-fi
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
 
+# goenv
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$GOENV_ROOT/bin:$PATH
+eval "$(goenv init -)"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
