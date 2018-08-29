@@ -102,6 +102,7 @@ initialize() {
       'tmux'
       'awscli'
       'sl'
+      'hugo'
     )
 
     local installed=`brew list`
