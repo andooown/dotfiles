@@ -79,7 +79,7 @@ initialize() {
 
   if has "brew"; then
     echo "Updating Homebrew..."
-    brew update && brew upgrade
+    brew update && brew upgrade && brew cask upgrade
     [[ $? ]] && echo "$(tput setaf 2)Update Homebrew complete. ✔︎$(tput sgr0)"
 
     local list_formulae
@@ -123,6 +123,31 @@ initialize() {
       brew install $list_formulae
 
       [[ $? ]] && echo "$(tput setaf 2)Installed missing formulae ✔︎$(tput sgr0)"
+    fi
+
+    local list_cask
+    local -a missing_cask
+    local -a desired_cask=(
+    )
+
+    local installed_cask=`brew cask list`
+    for index in ${!desired_cask[*]}
+    do
+      local cask=`echo ${desired_cask[$index]} | cut -d' ' -f 1`
+      if [[ -z `echo "${installed_cask}" | grep "^${cask}$"` ]]; then
+        missing_cask=("${missing_cask[@]}" "${desired_cask[$index]}")
+      else
+        echo "Installed cask ${cask}"
+      fi
+    done
+
+    if [[ "$missing_cask" ]]; then
+      list_cask=$( printf "%s " "${missing_cask[@]}" )
+
+      echo "Installing missing Homebrew cask..."
+      brew install $list_cask
+
+      [[ $? ]] && echo "$(tput setaf 2)Installed missing cask ✔︎$(tput sgr0)"
     fi
 
     echo "Cleanup Homebrew..."
