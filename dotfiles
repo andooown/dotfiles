@@ -138,6 +138,7 @@ initialize() {
       'google-chrome'
       'google-japanese-ime'
       'hyper'
+      'iterm2'
       'jasper'
       'karabiner-elements'
       'slack'
@@ -146,7 +147,6 @@ initialize() {
       'tweeten'
       'visual-studio'
       'visual-studio-code'
-      'iterm2'
     )
 
     local installed_cask=`brew cask list`
