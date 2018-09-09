@@ -128,6 +128,25 @@ initialize() {
     local list_cask
     local -a missing_cask
     local -a desired_cask=(
+      '1password'
+      'alfred'
+      'android-studio'
+      'bettertouchtool'
+      'docker'
+      'dropbox'
+      'flux'
+      'google-chrome'
+      'google-japanese-ime'
+      'hyper'
+      'jasper'
+      'karabiner-elements'
+      'slack'
+      'sourcetree'
+      'spotify'
+      'tweeten'
+      'visual-studio'
+      'visual-studio-code'
+      'iterm2'
     )
 
     local installed_cask=`brew cask list`
