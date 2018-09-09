@@ -145,7 +145,7 @@ initialize() {
       list_cask=$( printf "%s " "${missing_cask[@]}" )
 
       echo "Installing missing Homebrew cask..."
-      brew install $list_cask
+      brew cask install $list_cask
 
       [[ $? ]] && echo "$(tput setaf 2)Installed missing cask ✔︎$(tput sgr0)"
     fi
