@@ -13,6 +13,12 @@ $ ./dotfiles deploy
 $ ./dotfiles -f init
 ```
 
+### Gatekeeper関係でエラーが出るとき
+caskでインストールしたアプリでエラーが起きたときは以下のコマンドでGatekeeperを回避すると行けることもある
+```
+xattr -r -d com.apple.quarantine /Applications/hoge.app
+```
+
 ### 環境変数
 マシンごとの環境変数の設定は`~/.zsh_local_env`を作成し、その中に記述してください。
 以下は`~/.zsh_local_env`の例です。
