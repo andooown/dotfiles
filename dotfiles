@@ -64,6 +64,7 @@ link_files() {
   do
     [[ ${f} = ".git" ]] && continue
     [[ ${f} = ".gitignore" ]] && continue
+    [[ ${f} = "Brewfile" ]] && continue
     ln -snfv ${DOTFILES_DIR}/${f} ${HOME}/${f}
   done
   echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
@@ -82,94 +83,9 @@ initialize() {
     brew update && brew upgrade && brew cask upgrade
     [[ $? ]] && echo "$(tput setaf 2)Update Homebrew complete. ✔︎$(tput sgr0)"
 
-    local list_formulae
-    local -a missing_formulae
-    local -a desired_formulae=(
-      'git'
-      'tig'
-      'zsh'
-      'zsh-completions'
-      'mas'
-      'swiftlint'
-      'ghq'
-      'peco'
-      'hub'
-      'rbenv'
-      'pyenv'
-      'pipenv'
-      'nodenv'
-      'goenv'
-      'tmux'
-      'awscli'
-      'sl'
-      'hugo'
-    )
-
-    local installed=`brew list`
-    for index in ${!desired_formulae[*]}
-    do
-      local formula=`echo ${desired_formulae[$index]} | cut -d' ' -f 1`
-      if [[ -z `echo "${installed}" | grep "^${formula}$"` ]]; then
-        missing_formulae=("${missing_formulae[@]}" "${desired_formulae[$index]}")
-      else
-        echo "Installed ${formula}"
-      fi
-    done
-
-    if [[ "$missing_formulae" ]]; then
-      list_formulae=$( printf "%s " "${missing_formulae[@]}" )
-
-      echo "Installing missing Homebrew formulae..."
-      brew install $list_formulae
-
-      [[ $? ]] && echo "$(tput setaf 2)Installed missing formulae ✔︎$(tput sgr0)"
-    fi
-
-    local list_cask
-    local -a missing_cask
-    local -a desired_cask=(
-      '1password'
-      'alfred'
-      'android-studio'
-      'appcode'
-      'bettertouchtool'
-      'docker'
-      'dropbox'
-      'flux'
-      'google-chrome'
-      'google-japanese-ime'
-      'hyper'
-      'iterm2'
-      'jasper'
-      'karabiner-elements'
-      'pycharm'
-      'slack'
-      'sourcetree'
-      'spotify'
-      'tweeten'
-      'visual-studio'
-      'visual-studio-code'
-    )
-
-    local installed_cask=`brew cask list`
-    for index in ${!desired_cask[*]}
-    do
-      local cask=`echo ${desired_cask[$index]} | cut -d' ' -f 1`
-      if [[ -z `echo "${installed_cask}" | grep "^${cask}$"` ]]; then
-        missing_cask=("${missing_cask[@]}" "${desired_cask[$index]}")
-      else
-        echo "Installed cask ${cask}"
-      fi
-    done
-
-    if [[ "$missing_cask" ]]; then
-      list_cask=$( printf "%s " "${missing_cask[@]}" )
-
-      echo "Installing missing Homebrew cask..."
-      brew cask install $list_cask
-
-      [[ $? ]] && echo "$(tput setaf 2)Installed missing cask ✔︎$(tput sgr0)"
-    fi
+    echo "Installing Homebrew formulaes and casks and Mac App Store applications..."
+    brew bundle
+    echo "$(tput setaf 2)Install Homebrew formulaes and casks and Mac App Store applications complete. ✔︎$(tput sgr0)"
 
     echo "Cleanup Homebrew..."
     brew cleanup
