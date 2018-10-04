@@ -45,12 +45,13 @@ cask "tweeten"
 cask "visual-studio"
 cask "visual-studio-code"
 
-mas "Amphetamine", id: 937984704
-mas "BetterSnapTool", id: 417375580
-mas "iStat Menus", id: 1319778037
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Skitch", id: 425955336
-mas "The Unarchiver", id: 425424353
-mas "Xcode", id: 497799835
+# Disable mas due to crash bug
+#mas "Amphetamine", id: 937984704
+#mas "BetterSnapTool", id: 417375580
+#mas "iStat Menus", id: 1319778037
+#mas "Keynote", id: 409183694
+#mas "Numbers", id: 409203825
+#mas "Pages", id: 409201541
+#mas "Skitch", id: 425955336
+#mas "The Unarchiver", id: 425424353
+#mas "Xcode", id: 497799835
