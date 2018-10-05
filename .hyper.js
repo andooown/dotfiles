@@ -135,7 +135,6 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyperterm-material',
     'hypercwd',
     'hyper-confirm'
   ],
