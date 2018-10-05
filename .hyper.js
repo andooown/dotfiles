@@ -21,10 +21,10 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: 'rgba(208, 208, 208, 0.8)',
 
     // terminal text color under BLOCK cursor
-    cursorAccentColor: '#000',
+    cursorAccentColor: '#151515',
 
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
     cursorShape: 'BLOCK',
@@ -33,14 +33,14 @@ module.exports = {
     cursorBlink: false,
 
     // color of the text
-    foregroundColor: '#fff',
+    foregroundColor: '#d0d0d0',
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: '#000',
+    backgroundColor: '#202020',
 
     // terminal selection color
-    selectionColor: 'rgba(248,28,229,0.3)',
+    selectionColor: 'rgba(48, 48, 48, 0.3)',
 
     // border color (window, tabs)
     borderColor: '#333',
@@ -67,22 +67,22 @@ module.exports = {
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
     colors: {
-      black: '#000000',
-      red: '#C51E14',
-      green: '#1DC121',
-      yellow: '#C7C329',
-      blue: '#0A2FC4',
-      magenta: '#C839C5',
-      cyan: '#20C5C6',
-      white: '#C7C7C7',
-      lightBlack: '#686868',
-      lightRed: '#FD6F6B',
-      lightGreen: '#67F86F',
-      lightYellow: '#FFFA72',
-      lightBlue: '#6A76FB',
-      lightMagenta: '#FD7CFC',
-      lightCyan: '#68FDFE',
-      lightWhite: '#FFFFFF',
+      black: '#151515',
+      red: '#ac4142',
+      green: '#7e8d50',
+      yellow: '#e5b567',
+      blue: '#6c99ba',
+      magenta: '#9e4e85',
+      cyan: '#7dd5cf',
+      white: '#d0d0d0',
+      lightBlack: '#505050',
+      lightRed: '#ac4142',
+      lightGreen: '#7e8d50',
+      lightYellow: '#e5b566',
+      lightBlue: '#6c99bb',
+      lightMagenta: '#9e4e85',
+      lightCyan: '#7dd5cf',
+      lightWhite: '#f5f5f5',
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
