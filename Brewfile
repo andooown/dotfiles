@@ -4,6 +4,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 
 brew "awscli"
+brew "carthage"
 brew "ghq"
 brew "git"
 brew "goenv"
