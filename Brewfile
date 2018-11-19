@@ -48,6 +48,7 @@ cask "spotify"
 cask "tweeten"
 cask "visual-studio"
 cask "visual-studio-code"
+cask "webstorm"
 
 mas "Amphetamine", id: 937984704
 mas "BetterSnapTool", id: 417375580
