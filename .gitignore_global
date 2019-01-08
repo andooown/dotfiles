@@ -1,7 +1,10 @@
 *~
 .DS_Store
 
+# vim
+*.swp
 # JetBrains IDE
 .idea/
 # VSCode
 .vscode/
+
