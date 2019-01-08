@@ -27,29 +27,45 @@ compinit
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 
+has() {
+  type "$1" > /dev/null 2>&1
+}
+
 # goenv
-export GOENV_ROOT=$HOME/.goenv
-export PATH=$GOENV_ROOT/bin:$PATH
-eval "$(goenv init -)"
+if has "goenv"; then
+  export GOENV_ROOT=$HOME/.goenv
+  export PATH=$GOENV_ROOT/bin:$PATH
+  eval "$(goenv init -)"
+fi
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-# pipenv
-export PIPENV_VENV_IN_PROJECT=true
-eval "$(pipenv --completion)"
+if has "rbenv"; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+# pyenv/pipenv
+if has "pyenv"; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+
+  if has "pipenv"; then
+    export PIPENV_VENV_IN_PROJECT=true
+    eval "$(pipenv --completion)"
+  fi
+fi
 # nodenv
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
+if has "nodenv"; then
+  export PATH="$HOME/.nodenv/bin:$PATH"
+  eval "$(nodenv init -)"
+fi
 
-# gcloud
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+if has "gcloud"; then
+  # gcloud
+  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+fi
 
-# Customize to your needs...
+# Alias
 alias ls='ls -G'
 alias ll='ls -hl'
 
@@ -66,7 +82,4 @@ fi
 if [ -e $HOME/.zsh_local_env ]; then
   source $HOME/.zsh_local_env
 fi
-
-# alias
-alias sl='sl'
 
