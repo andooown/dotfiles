@@ -126,6 +126,23 @@ module.exports = {
 
     // hyper-confirm
     confirmQuit: true,
+
+    overlay: {
+      animate: false,
+      hotkeys: {
+        open: ['Control+Space'],
+        close: ['Control+Escape']
+      },
+      primaryDisplay: true,
+      size: {
+        width: 1.0,
+        height: 1.0
+      },
+      tray: false,
+      unique: true
+    },
+
+    opacity: 0.95
   },
 
   // a list of plugins to fetch and install from npm
@@ -137,7 +154,9 @@ module.exports = {
   plugins: [
     'hypercwd',
     'hyper-confirm',
-    "hyper-afterglow"
+    "hyper-afterglow",
+    "hyper-overlay",
+    "hyper-opacity"
   ],
 
   // in development, you can create a directory under
