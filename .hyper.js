@@ -129,6 +129,10 @@ module.exports = {
 
     overlay: {
       animate: false,
+      hotkeys: {
+        open: ['Control+Space'],
+        close: ['Control+Escape']
+      },
       primaryDisplay: true,
       size: {
         width: 1.0,
