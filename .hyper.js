@@ -138,6 +138,7 @@ module.exports = {
       unique: true
     },
 
+    opacity: 0.95
   },
 
   // a list of plugins to fetch and install from npm
@@ -151,6 +152,7 @@ module.exports = {
     'hyper-confirm',
     "hyper-afterglow",
     "hyper-overlay",
+    "hyper-opacity"
   ],
 
   // in development, you can create a directory under
