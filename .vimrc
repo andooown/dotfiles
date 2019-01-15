@@ -1,3 +1,21 @@
+" ------------------------------
+" Plugins
+" ------------------------------
+call plug#begin('~/.vim/plugged')
+  " vim-airline
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  " Theme
+  Plug 'danilo-augusto/vim-afterglow'
+call plug#end()
+
+colorscheme afterglow
+let g:airline_theme='afterglow'
+
+" ------------------------------
+" Config
+" ------------------------------
+
 set fenc=utf-8
 " バックアップ/スワップを作らない
 set nobackup
