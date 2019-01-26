@@ -124,9 +124,6 @@ module.exports = {
 
     // for advanced config flags please refer to https://hyper.is/#cfg
 
-    // hyper-confirm
-    confirmQuit: true,
-
     overlay: {
       animate: false,
       primaryDisplay: true,
@@ -149,7 +146,6 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hypercwd',
-    'hyper-confirm',
     "hyper-afterglow",
     "hyper-overlay",
     "hyper-opacity"
