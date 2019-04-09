@@ -11,7 +11,7 @@ brew "git-lfs"
 brew "goenv"
 brew "hub"
 brew "hugo"
-brew "imagemagick", args: ["with-libheif"]
+brew "imagemagick"
 brew "mas"
 brew "nodenv"
 brew "peco"
