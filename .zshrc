@@ -31,19 +31,26 @@ has() {
   type "$1" > /dev/null 2>&1
 }
 
+is_osx() {
+  [[ $(uname) == 'Darwin' ]]
+}
+is_linux() {
+  [[ $(uname) == 'Linux' ]]
+}
+
 # goenv
-if has "goenv"; then
+if has "goenv" || [ -e $HOME/.goenv ]; then
   export GOENV_ROOT=$HOME/.goenv
   export PATH=$GOENV_ROOT/bin:$PATH
   eval "$(goenv init -)"
 fi
 # rbenv
-if has "rbenv"; then
+if has "rbenv" || [ -e $HOME/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 # pyenv/pipenv
-if has "pyenv"; then
+if has "pyenv" || [ -e $HOME/.pyenv ]; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
@@ -54,12 +61,12 @@ if has "pyenv"; then
   fi
 fi
 # nodenv
-if has "nodenv"; then
+if has "nodenv" || [ -e $HOME/.nodenv ]; then
   export PATH="$HOME/.nodenv/bin:$PATH"
   eval "$(nodenv init -)"
 fi
 
-if has "gcloud"; then
+if has "gcloud" && is_osx; then
   # gcloud
   source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
   source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
