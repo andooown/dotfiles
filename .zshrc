@@ -38,6 +38,11 @@ is_linux() {
   [[ $(uname) == 'Linux' ]]
 }
 
+if has "anyenv" || [ -e $HOME/.anyenv ]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
+
 # goenv
 if has "goenv" || [ -e $HOME/.goenv ]; then
   export GOENV_ROOT=$HOME/.goenv

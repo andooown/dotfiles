@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 
+brew "anyenv"
 brew "awscli"
 brew "carthage"
 brew "ghq"
