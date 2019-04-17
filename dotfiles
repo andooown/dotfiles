@@ -115,6 +115,12 @@ initialize() {
     echo "$(tput setaf 2)Installed powerline fonts ✔︎$(tput sgr0)"
   fi
 
+  if has "anyenv"; then
+    echo "Initialize anyenv..."
+    anyenv install --init
+    echo "$(tput setaf 2)Initialized anyenv ✔︎$(tput sgr0)"
+  fi
+
   if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then
     echo "Installing tpm..."
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
