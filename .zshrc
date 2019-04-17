@@ -41,34 +41,11 @@ is_linux() {
 if has "anyenv" || [ -e $HOME/.anyenv ]; then
   export PATH="$HOME/.anyenv/bin:$PATH"
   eval "$(anyenv init -)"
-fi
-
-# goenv
-if has "goenv" || [ -e $HOME/.goenv ]; then
-  export GOENV_ROOT=$HOME/.goenv
-  export PATH=$GOENV_ROOT/bin:$PATH
-  eval "$(goenv init -)"
-fi
-# rbenv
-if has "rbenv" || [ -e $HOME/.rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
-# pyenv/pipenv
-if has "pyenv" || [ -e $HOME/.pyenv ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
 
   if has "pipenv"; then
     export PIPENV_VENV_IN_PROJECT=true
     eval "$(pipenv --completion)"
   fi
-fi
-# nodenv
-if has "nodenv" || [ -e $HOME/.nodenv ]; then
-  export PATH="$HOME/.nodenv/bin:$PATH"
-  eval "$(nodenv init -)"
 fi
 
 if has "gcloud" && is_osx; then
