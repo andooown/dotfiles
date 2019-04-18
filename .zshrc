@@ -38,6 +38,15 @@ is_linux() {
   [[ $(uname) == 'Linux' ]]
 }
 
+# Auto attach or launch tmux
+if [[ ! -n $TMUX && $- == *l* ]]; then
+  if tmux list-session > /dev/null 2>&1; then
+    tmux attach-session
+  else
+    tmux new-session
+  fi
+fi
+
 if has "anyenv" || [ -e $HOME/.anyenv ]; then
   export PATH="$HOME/.anyenv/bin:$PATH"
   eval "$(anyenv init -)"
