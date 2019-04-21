@@ -47,6 +47,7 @@ cask "visual-studio"
 cask "visual-studio-code"
 cask "webstorm"
 
+mas "Airmail 3", id: 918858936
 mas "Amphetamine", id: 937984704
 mas "BetterSnapTool", id: 417375580
 mas "iStat Menus", id: 1319778037
