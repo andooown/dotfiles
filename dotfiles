@@ -39,24 +39,6 @@ while getopts :f:h opt; do
 done
 shift $((OPTIND - 1))
 
-
-if [ -n "${OVERWRITE}" -o ! -d ${DOTFILES_DIR} ]; then
-  echo "Downloading dotfiles..."
-  rm -rf ${DOTFILES_DIR}
-  mkdir ${DOTFILES_DIR}
-
-  if has "git"; then
-    git clone --recursive "${REMOTE_URL}" "${DOTFILES_DIR}"
-  else
-    curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOTFILES_TARBALL}
-    tar -zxf ${HOME}/dotfiles.tar.gz --strip-components 1 -C ${DOTFILES_DIR}
-    rm -f ${HOME}/dotfiles.tar.gz
-  fi
-
-  echo $(tput setaf 2)Download dotfiles complete!. ✔︎$(tput sgr0)
-fi
-
-
 link_files() {
   cd ${DOTFILES_DIR}
 
@@ -71,6 +53,22 @@ link_files() {
 }
 
 initialize() {
+  if [ -n "${OVERWRITE}" -o ! -d ${DOTFILES_DIR} ]; then
+    echo "Downloading dotfiles..."
+    rm -rf ${DOTFILES_DIR}
+    mkdir ${DOTFILES_DIR}
+
+    if has "git"; then
+      git clone --recursive "${REMOTE_URL}" "${DOTFILES_DIR}"
+    else
+      curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOTFILES_TARBALL}
+      tar -zxf ${HOME}/dotfiles.tar.gz --strip-components 1 -C ${DOTFILES_DIR}
+      rm -f ${HOME}/dotfiles.tar.gz
+    fi
+
+    echo $(tput setaf 2)Download dotfiles complete!. ✔︎$(tput sgr0)
+  fi
+
   if has "brew"; then
     echo "$(tput setaf 2)Already installed Homebrew ✔︎$(tput sgr0)"
   else
