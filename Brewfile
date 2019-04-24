@@ -55,5 +55,4 @@ mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Run Cat", id: 1429033973
-mas "Skitch", id: 425955336
 mas "The Unarchiver", id: 425424353
