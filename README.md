@@ -1,6 +1,11 @@
 # dotfiles
 
 ## Usage
+### Requirement
+- Xcode
+  - Swiftlintのインストールに必要
+
+### Initialize
 以下のコマンドで環境構築ができます。
 ```
 $ bash -c "$(curl -fsSL raw.github.com/andooown/dotfiles/master/dotfiles)" -s init
@@ -26,3 +31,4 @@ xattr -r -d com.apple.quarantine /Applications/hoge.app
 export HTTP_PROXY="http://hogehoge:8080"
 export HTTPS_PROXY="http://hogehoge:8080"
 ```
+
