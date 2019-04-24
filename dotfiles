@@ -56,11 +56,11 @@ initialize() {
   if [ -n "${OVERWRITE}" -o ! -d ${DOTFILES_DIR} ]; then
     echo "Downloading dotfiles..."
     rm -rf ${DOTFILES_DIR}
-    mkdir ${DOTFILES_DIR}
 
     if has "git"; then
       git clone --recursive "${REMOTE_URL}" "${DOTFILES_DIR}"
     else
+      mkdir ${DOTFILES_DIR}
       curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOTFILES_TARBALL}
       tar -zxf ${HOME}/dotfiles.tar.gz --strip-components 1 -C ${DOTFILES_DIR}
       rm -f ${HOME}/dotfiles.tar.gz
