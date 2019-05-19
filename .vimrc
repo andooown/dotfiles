@@ -68,3 +68,6 @@ set hlsearch
 " ESC 連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" クリップボードにコピー
+set clipboard+=unnamed
+

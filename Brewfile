@@ -19,6 +19,7 @@ brew "sl"
 brew "swiftlint"
 brew "tig"
 brew "tmux"
+brew "vim"
 brew "zsh"
 brew "zsh-completions"
 
