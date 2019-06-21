@@ -17,3 +17,12 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[alias]
+  cm = commit
+  co = checkout
+  cob = checkout -b
+  cp = cherry-pick
+  sp = stash push
+  spp = stash pop
+  st = status
+
