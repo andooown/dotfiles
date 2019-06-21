@@ -22,6 +22,7 @@
   co = checkout
   cob = checkout -b
   cp = cherry-pick
+  l = log --pretty='format:%C(magenta)%h%Creset %C(blue)%cd%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset%C(black bold)%ar%Creset' --date=iso
   sp = stash push
   spp = stash pop
   st = status
