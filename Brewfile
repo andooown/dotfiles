@@ -6,6 +6,7 @@ tap " mono0926/license-plist"
 
 brew "ag"
 brew "anyenv"
+brew "asdf"
 brew "awscli"
 brew "carthage"
 brew "ghq"
