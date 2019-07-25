@@ -42,11 +42,8 @@ cask "jasper"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "slack"
-cask "sourcetree"
 cask "spotify"
-cask "station"
 cask "tweeten"
-cask "visual-studio"
 cask "visual-studio-code"
 
 mas "Airmail 3", id: 918858936
