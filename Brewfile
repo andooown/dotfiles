@@ -2,7 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
-tap " mono0926/license-plist"
+tap "mono0926/license-plist"
 
 brew "ag"
 brew "anyenv"
