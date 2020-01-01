@@ -1,0 +1,37 @@
+background_opacity: 0.9
+
+# font
+
+font:
+  size: 14.0
+
+# color
+
+schemes:
+  afterglow: &afterglow
+    primary:
+      background: '0x202020'
+      foreground: '0xd0d0d0'
+
+    normal:
+      black:   '0x151515'
+      red:     '0xac4142'
+      green:   '0x7e8d50'
+      yellow:  '0xe5b567'
+      blue:    '0x6c99ba'
+      magenta: '0x9e4e85'
+      cyan:    '0x7dd5cf'
+      white:   '0xd0d0d0'
+    
+    bright:
+      black:   '0x505050'
+      red:     '0xac4142'
+      green:   '0x7e8d50'
+      yellow:  '0xe5b566'
+      blue:    '0x6c99bb'
+      magenta: '0x9e4e85'
+      cyan:    '0x7dd5cf'
+      white:   '0xf5f5f5'
+
+colors: *afterglow
+
