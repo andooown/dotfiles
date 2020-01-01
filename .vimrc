@@ -12,6 +12,12 @@ call plug#end()
 colorscheme afterglow
 let g:airline_theme='afterglow'
 
+" alacritty の透過設定を vim でも有効にする
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight SpecialKey ctermbg=NONE guibg=NONE
+highlight EndOfBuffer ctermbg=NONE guibg=NONE
+
 " ------------------------------
 " Config
 " ------------------------------

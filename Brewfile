@@ -27,6 +27,7 @@ brew "zsh"
 brew "zsh-completions"
 
 cask "1password"
+cask "alacritty"
 cask "alfred"
 cask "bettertouchtool"
 cask "docker"
