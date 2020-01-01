@@ -42,13 +42,27 @@ shift $((OPTIND - 1))
 link_files() {
   cd ${DOTFILES_DIR}
 
-  for f in .??*
+  for f in $(find . -type f)
   do
-    [[ ${f} = ".git" ]] && continue
-    [[ ${f} = ".gitignore" ]] && continue
-    [[ ${f} = "Brewfile" ]] && continue
-    ln -snfv ${DOTFILES_DIR}/${f} ${HOME}/${f}
+    # exclude files
+    [[ ${f} =~ /\.git/ ]] && continue
+    [[ ${f} =~ \.gitignore ]] && continue
+    [[ ${f} =~ Brewfile ]] && continue
+
+    path_from_parent=${f#./}
+    source_path=$HOME/.dotfiles/${path_from_parent}
+    target_path=$HOME/${path_from_parent}
+
+    # make directory if not exist
+    target_parent_dir=$(dirname ${target_path})
+    if [ ! -d $target_parent_dir ]; then
+      mkdir -p ${target_parent_dir}
+    fi
+
+    # link file
+    ln -snfv ${source_path} ${target_path}
   done
+
   echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
 }
 
