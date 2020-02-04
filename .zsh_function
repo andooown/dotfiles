@@ -30,3 +30,9 @@ function peco-open-ghq-page() {
   zle accept-line
 }
 zle -N peco-open-ghq-page
+
+# qrencode で QR コードを生成してプレビュー
+function qr() {
+  qrencode -o - $@ | open -f -a preview
+}
+
