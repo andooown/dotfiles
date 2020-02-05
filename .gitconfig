@@ -19,14 +19,15 @@
 	required = true
 [alias]
   cm = commit
-  co = checkout
-  cob = checkout -b
   cp = cherry-pick
   fp = fetch -p
   l = log --pretty='format:%C(magenta)%h%Creset %C(blue)%cd%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset%C(black bold)%ar%Creset' --date=iso
   pp = pull -p
+  res = restore
   rmb = "! git branch --merged | grep -vE \"^\\*|master$|develop$\" | xargs -I % git branch -d %"
   sp = stash push
   spp = stash pop
   st = status
+  sw = switch
+  swc = switch -c
 
