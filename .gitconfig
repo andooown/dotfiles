@@ -19,8 +19,6 @@
 	required = true
 [alias]
   cm = commit
-  co = checkout
-  cob = checkout -b
   cp = cherry-pick
   fp = fetch -p
   l = log --pretty='format:%C(magenta)%h%Creset %C(blue)%cd%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset%C(black bold)%ar%Creset' --date=iso
