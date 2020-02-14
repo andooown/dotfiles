@@ -79,3 +79,17 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " クリップボードにコピー
 set clipboard+=unnamed
 
+" ------------------------------
+" vim-easymotion
+" ------------------------------
+" Disable default mappings
+let g:EasyMotion_do_mapping = 0
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK-search -> \j or \k
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+" 2-characters-search -> \s
+nmap s <Plug>(easymotion-overwin-f2)
+
