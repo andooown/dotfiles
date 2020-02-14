@@ -2,6 +2,8 @@
 " Plugins
 " ------------------------------
 call plug#begin('~/.vim/plugged')
+  " vim-easymotion
+  Plug 'easymotion/vim-easymotion'
   " vim-airline
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
