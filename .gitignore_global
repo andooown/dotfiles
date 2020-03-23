@@ -11,3 +11,6 @@
 vendor
 .bundle
 
+# Elixir LSP
+.elixir_ls
+
