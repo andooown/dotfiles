@@ -47,6 +47,10 @@ if [[ ! -n $TMUX && $- == *l* ]]; then
   fi
 fi
 
+if has "direnv"; then
+  eval "$(direnv hook zsh)"
+fi
+
 if has "asdf"; then
   ASDF_DIR=$(brew --prefix asdf)
   source $ASDF_DIR/asdf.sh
