@@ -31,3 +31,6 @@
   sw = switch
   swc = switch -c
 
+[pull]
+  ff = only
+

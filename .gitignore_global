@@ -5,6 +5,7 @@
 *.swp
 # JetBrains IDE
 .idea/
+*.iml
 # VSCode
 .vscode/
 # bundler
