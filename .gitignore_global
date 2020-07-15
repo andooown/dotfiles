@@ -6,14 +6,24 @@
 
 # vim
 *.swp
+
 # JetBrains IDE
 .idea/
+*.iml
+
 # VSCode
 .vscode/
+
 # bundler
 vendor
 .bundle
 
+# direnv
+.envrc
+
 # Elixir LSP
 .elixir_ls
+
+# Mint
+.mint
 
