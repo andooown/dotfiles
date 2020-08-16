@@ -2,7 +2,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "mono0926/license-plist"
 
 brew "ag"
 brew "anyenv"
@@ -16,12 +15,10 @@ brew "git-lfs"
 brew "hub"
 brew "hugo"
 brew "imagemagick"
-brew "license-plist"
 brew "mas"
 brew "mint"
 brew "peco"
 brew "qrencode"
-brew "sl"
 brew "swiftlint"
 brew "tig"
 brew "tmux"
@@ -39,8 +36,6 @@ cask "google-chrome"
 cask "google-cloud-sdk"
 cask "google-drive-file-stream"
 cask "google-japanese-ime"
-cask "hyper"
-cask "iterm2"
 cask "jasper"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
@@ -49,7 +44,7 @@ cask "spotify"
 cask "tweeten"
 cask "visual-studio-code"
 
-mas "Airmail 3", id: 918858936
+mas "Airmail 4", id: 918858936
 mas "Amphetamine", id: 937984704
 mas "BetterSnapTool", id: 417375580
 mas "iStat Menus", id: 1319778037
