@@ -46,7 +46,7 @@ link_files() {
   do
     # exclude files
     [[ ${f} =~ /\.git/ ]] && continue
-    [[ ${f} =~ \.gitignore ]] && continue
+    [[ ${f} =~ \.gitignore ]] && [[ ! ${f} =~ global ]] && continue
     [[ ${f} =~ Brewfile ]] && continue
 
     path_from_parent=${f#./}
