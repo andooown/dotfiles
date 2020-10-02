@@ -35,6 +35,7 @@ set hidden
 " コマンドをステータスに表示
 set showcmd
 
+set relativenumber
 set number
 " 現在の行/列を強調
 set cursorline
