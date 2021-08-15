@@ -92,7 +92,7 @@ initialize() {
 
   if has "brew"; then
     echo "Updating Homebrew..."
-    brew update && brew upgrade && brew cask upgrade
+    brew update
     [[ $? ]] && echo "$(tput setaf 2)Update Homebrew complete. ✔︎$(tput sgr0)"
 
     echo "Installing Homebrew formulaes and casks and Mac App Store applications..."
