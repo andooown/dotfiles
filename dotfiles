@@ -106,7 +106,8 @@ initialize() {
     echo "$(tput setaf 2)Cleanup Homebrew complete. ✔︎$(tput sgr0)"
   fi
 
-  homebrew_zsh_path="${$(brew --prefix)%/}/bin/zsh"
+  homebrew_prefix=$(brew --prefix)
+  homebrew_zsh_path="${brew_prefix%/}/bin/zsh"
   if [ ${SHELL} != ${homebrew_zsh_path}  ]; then
     if [ -z `grep "${homebrew_zsh_path}" /etc/shells` ]; then
       echo "${homebrew_zsh_path}" | sudo tee -a /etc/shells
