@@ -108,6 +108,8 @@ initialize() {
 
   homebrew_prefix=$(brew --prefix)
   homebrew_zsh_path="${homebrew_prefix%/}/bin/zsh"
+  echo "Homebrew path = ${homebrew_prefix}"
+  echo "Homebrew zsh path = ${homebrew_zsh_path}"
   if [ ${SHELL} != ${homebrew_zsh_path}  ]; then
     if [ -z `grep "${homebrew_zsh_path}" /etc/shells` ]; then
       echo "${homebrew_zsh_path}" | sudo tee -a /etc/shells
