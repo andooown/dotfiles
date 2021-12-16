@@ -46,7 +46,6 @@ cask "tweeten"
 cask "visual-studio-code"
 
 mas "Amphetamine", id: 937984704
-mas "BetterSnapTool", id: 417375580
 mas "iStat Menus", id: 1319778037
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
