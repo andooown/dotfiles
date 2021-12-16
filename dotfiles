@@ -112,7 +112,10 @@ initialize() {
     if [ -z `grep "${homebrew_zsh_path}" /etc/shells` ]; then
       echo "${homebrew_zsh_path}" | sudo tee -a /etc/shells
     fi
-    chsh -s "${homebrew_zsh_path}" 
+    chsh -s "${homebrew_zsh_path}"
+    echo "$(tput setaf 2)Updated default shell to ${homebrew_zsh_path} ✔︎$(tput sgr0)"
+  else
+    echo "$(tput setaf 2)Already used ${homebrew_zsh_path} ✔︎$(tput sgr0)"
   fi
 
   if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
