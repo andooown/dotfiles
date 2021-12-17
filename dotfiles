@@ -48,6 +48,8 @@ link_files() {
     [[ ${f} =~ /\.git/ ]] && continue
     [[ ${f} =~ \.gitignore ]] && [[ ! ${f} =~ global ]] && continue
     [[ ${f} =~ Brewfile ]] && continue
+    [[ ${f} =~ README.md ]] && continue
+    [[ ${f} =~ dotfiles ]] && continue
 
     path_from_parent=${f#./}
     source_path=$HOME/.dotfiles/${path_from_parent}
