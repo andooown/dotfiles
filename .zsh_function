@@ -20,17 +20,6 @@ function peco-insert-ghq-list() {
 }
 zle -N peco-insert-ghq-list
 
-# hub で ghq のページを開く
-function peco-open-ghq-page() {
-  local selected=$(ghq list | peco --prompt='ghq list>' | cut -d "/" -f 2,3)
-  LBUFFER="hub browse $selected"
-  CURSOR=$#LBUFFER
-
-  zle reset-prompt
-  zle accept-line
-}
-zle -N peco-open-ghq-page
-
 # qrencode で QR コードを生成してプレビュー
 function qr() {
   qrencode -o - $@ | open -f -a preview
