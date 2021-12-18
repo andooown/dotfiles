@@ -1,11 +1,11 @@
 # dotfiles
 
-## Usage
-### Requirement
+## Requirement
 - Xcode
   - To install `xcodes`
 
-### Setup
+## Setup
+### dotfiles
 Run following commands to setup.
 ```
 $ bash -c "$(curl -fsSL raw.github.com/andooown/dotfiles/master/dotfiles)" -s init
@@ -18,8 +18,8 @@ You can force to overwrite with `-f` option.
 $ ./dotfiles -f init
 ```
 
-### Tips
-#### ENV for each machines 
+## Tips
+### ENV for each machines 
 If you need the environment variables for each machines, you can use `~/.zsh_local_env` file.
 
 Example
