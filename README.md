@@ -3,30 +3,26 @@
 ## Usage
 ### Requirement
 - Xcode
-  - Swiftlintのインストールに必要
+  - To install `xcodes`
 
-### Initialize
-以下のコマンドで環境構築ができます。
+### Setup
+Run following commands to setup.
 ```
 $ bash -c "$(curl -fsSL raw.github.com/andooown/dotfiles/master/dotfiles)" -s init
 $ cd $HOME/.dotfiles
 $ ./dotfiles deploy
 ```
 
-また`-f`オプションをつけると上書きをします。
+You can force to overwrite with `-f` option.
 ```
 $ ./dotfiles -f init
 ```
 
-### Gatekeeper関係でエラーが出るとき
-caskでインストールしたアプリでエラーが起きたときは以下のコマンドでGatekeeperを回避すると行けることもある
-```
-xattr -r -d com.apple.quarantine /Applications/hoge.app
-```
+### Tips
+#### ENV for each machines 
+If you need the environment variables for each machines, you can use `~/.zsh_local_env` file.
 
-### 環境変数
-マシンごとの環境変数の設定は`~/.zsh_local_env`を作成し、その中に記述してください。
-以下は`~/.zsh_local_env`の例です。
+Example
 ```
 export HTTP_PROXY="http://hogehoge:8080"
 export HTTPS_PROXY="http://hogehoge:8080"
