@@ -10,6 +10,8 @@
 [user]
 	name = andooown
 	email = andooown.dev@gmail.com
+[url "git@github.com:"]
+    insteadOf = https://github.com/
 [ghq]
 	root = ~/go/src
 [filter "lfs"]
