@@ -26,10 +26,6 @@ done
 autoload -Uz compinit
 compinit
 
-# go
-export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:$PATH"
-
 has() {
   type "$1" > /dev/null 2>&1
 }
@@ -66,6 +62,16 @@ if has "anyenv" || [ -e $HOME/.anyenv ]; then
   if has "pipenv"; then
     export PIPENV_VENV_IN_PROJECT=true
     eval "$(pipenv --completion)"
+  fi
+
+  if has "goenv"; then
+    export GOENV_ROOT="$HOME/.goenv"
+    export PATH="$GOENV_ROOT/bin:$PATH"
+
+    eval "$(goenv init -)"
+
+    export PATH="$GOROOT/bin:$PATH"
+    export PATH="$PATH:$GOPATH/bin"
   fi
 fi
 
