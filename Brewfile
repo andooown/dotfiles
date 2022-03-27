@@ -6,6 +6,7 @@ tap "robotsandpencils/made"
 
 brew "ag"
 brew "anyenv"
+brew "aria2"
 brew "asdf"
 brew "awscli"
 brew "carthage"
