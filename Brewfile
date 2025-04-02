@@ -39,7 +39,6 @@ cask "slack"
 cask "spotify"
 cask "visual-studio-code"
 
-mas "iStat Menus", id: 1319778037
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
