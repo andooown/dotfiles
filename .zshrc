@@ -51,8 +51,7 @@ if has "direnv"; then
 fi
 
 if has "asdf"; then
-  ASDF_DIR=$(brew --prefix asdf)
-  source $ASDF_DIR/asdf.sh
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fi
 
 if has "anyenv" || [ -e $HOME/.anyenv ]; then
