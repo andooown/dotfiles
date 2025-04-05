@@ -8,11 +8,26 @@
 export LANG=ja_JP.UTF-8
 export LC_CTYPE=ja_JP.UTF-8
 
+has() {
+  type "$1" > /dev/null 2>&1
+}
+
+is_osx() {
+  [[ $(uname) == 'Darwin' ]]
+}
+is_linux() {
+  [[ $(uname) == 'Linux' ]]
+}
+
+is_in_vscode() {
+  [[ $TERM_PROGRAM ]]
+}
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+if ! is_in_vscode && [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
@@ -26,19 +41,8 @@ done
 autoload -Uz compinit
 compinit
 
-has() {
-  type "$1" > /dev/null 2>&1
-}
-
-is_osx() {
-  [[ $(uname) == 'Darwin' ]]
-}
-is_linux() {
-  [[ $(uname) == 'Linux' ]]
-}
-
 # Auto attach or launch tmux
-if [[ ! -n $TMUX && $- == *l* ]]; then
+if ! is_in_vscode && [[ ! -n $TMUX && $- == *l* ]]; then
   if tmux list-session > /dev/null 2>&1; then
     tmux attach-session
   else
