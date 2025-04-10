@@ -20,7 +20,7 @@ is_linux() {
 }
 
 is_in_vscode() {
-  [[ $TERM_PROGRAM ]]
+  [[ $TERM_PROGRAM == 'vscode' ]]
 }
 
 # Homebrew
