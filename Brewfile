@@ -27,6 +27,7 @@ brew "zsh-completions"
 
 cask "1password"
 cask "bartender"
+cask "bettertouchtool"
 cask "discord"
 cask "docker"
 cask "google-chrome"
