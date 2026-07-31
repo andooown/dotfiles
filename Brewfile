@@ -1,7 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
 tap "robotsandpencils/made"
 
 brew "ag"
@@ -16,8 +12,8 @@ brew "ghq"
 brew "git"
 brew "git-lfs"
 brew "hugo"
-brew "imagemagick"
 brew "jq"
+brew "lutzifer/tap/keyboardSwitcher"
 brew "mas"
 brew "mint"
 brew "peco"
@@ -30,27 +26,19 @@ brew "zsh"
 brew "zsh-completions"
 
 cask "1password"
-cask "alacritty"
-cask "alfred"
 cask "bartender"
 cask "bettertouchtool"
 cask "discord"
 cask "docker"
-cask "dropbox"
 cask "google-chrome"
 cask "google-cloud-sdk"
-cask "google-drive"
 cask "iterm2"
-cask "jasper"
 cask "jetbrains-toolbox"
-cask "karabiner-elements"
+cask "raycast"
 cask "slack"
 cask "spotify"
-cask "tweeten"
 cask "visual-studio-code"
 
-mas "Amphetamine", id: 937984704
-mas "iStat Menus", id: 1319778037
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541

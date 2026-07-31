@@ -1,0 +1,188 @@
+{
+  "BTTPresetCreatorNotes" : "",
+  "BTTPresetInfoURL" : "",
+  "BTTPresetName" : "andooown",
+  "BTTPresetColor" : "217.996015, 50.790900, 220.830000, 255.000000",
+  "BTTPresetUUID" : "72DC843D-CE37-4EB5-A9CE-2FC2FB3CAC4A",
+  "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "com.apple.finder",
+      "BTTAppName" : "Finder",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTTriggers" : [
+
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "BT.L",
+      "BTTAppName" : "Recently Used",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTTriggers" : [
+
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "BT.G",
+      "BTTAppName" : "Global",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTTriggers" : [
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1749005732.3440418,
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTUUID" : "F0D84C72-188E-400F-B412-E4B88ACC79D2",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "空のプレースホルダ",
+          "BTTEnabled" : 1,
+          "BTTEnabled2" : 1,
+          "BTTOrder" : 0,
+          "BTTMergeIntoTouchBarGroups" : 0
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1749006027.3472881,
+          "BTTTriggerType" : 624,
+          "BTTTriggerTypeDescriptionReadOnly" : "トリガーを選択してください ",
+          "BTTTriggerClass" : "BTTTriggerTypeKeySequence",
+          "BTTUUID" : "BD71DCA2-721C-449A-8A61-752B0BA24A06",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "空のプレースホルダ",
+          "BTTEnabled" : 1,
+          "BTTEnabled2" : 1,
+          "BTTOrder" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1749006027.347275,
+              "BTTTriggerParentUUID" : "BD71DCA2-721C-449A-8A61-752B0BA24A06",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeySequence",
+              "BTTUUID" : "E69A5DA9-40BF-4487-B020-64385DFCDA90",
+              "BTTLayoutIndependentActionChar" : "d",
+              "BTTShortcutToSend" : "102",
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTOrder" : 1
+            }
+          ],
+          "BTTKeySequence" : {
+            "BTTPauseBetween" : 0.29999999999999999,
+            "BTTKeyCount" : 2,
+            "BTTKeyboardType" : -2052004921,
+            "BTTKeySequenceDownKeys" : [
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 770698624
+              }
+            ],
+            "BTTKeySequenceMixedKeys" : [
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 770698624
+              },
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 770698624
+              }
+            ],
+            "BTTKeySequenceUpKeys" : [
+              {
+                "BTTKEYCode" : 55,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 770698624
+              }
+            ]
+          }
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1749005772.3289399,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "48AA37B4-3F0E-46A8-BF42-FE528B6DA105",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "空のプレースホルダ",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : -1,
+          "BTTOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1749006044.377753,
+          "BTTTriggerType" : 624,
+          "BTTTriggerTypeDescriptionReadOnly" : "トリガーを選択してください ",
+          "BTTTriggerClass" : "BTTTriggerTypeKeySequence",
+          "BTTUUID" : "E95878FF-5A38-4B0B-BE05-D06268DADD4E",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "空のプレースホルダ",
+          "BTTEnabled" : 1,
+          "BTTEnabled2" : 1,
+          "BTTOrder" : 1,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1749006044.389554,
+              "BTTTriggerParentUUID" : "E95878FF-5A38-4B0B-BE05-D06268DADD4E",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeySequence",
+              "BTTUUID" : "96E1426B-67CB-4408-85D9-F136F5729157",
+              "BTTLayoutIndependentActionChar" : "k",
+              "BTTShortcutToSend" : "104",
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTOrder" : 1
+            }
+          ],
+          "BTTKeySequence" : {
+            "BTTPauseBetween" : 0.29999999999999999,
+            "BTTKeyCount" : 2,
+            "BTTKeyboardType" : -2052004921,
+            "BTTKeySequenceDownKeys" : [
+              {
+                "BTTKEYCode" : 54,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 770698816
+              }
+            ],
+            "BTTKeySequenceMixedKeys" : [
+              {
+                "BTTKEYCode" : 54,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 770698816
+              },
+              {
+                "BTTKEYCode" : 54,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 770698816
+              }
+            ],
+            "BTTKeySequenceUpKeys" : [
+              {
+                "BTTKEYCode" : 54,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 770698816
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "BTTPresetSnapAreas" : [
+
+  ]
+}
