@@ -23,6 +23,15 @@ is_in_vscode() {
   [[ $TERM_PROGRAM == 'vscode' ]]
 }
 
+is_in_claude() {
+  [[ -n $CLAUDECODE ]]
+}
+
+# Claude デスクトップアプリが裏で起動するログインシェル（CLAUDECODE が無い）を検出する
+is_spawned_by_claude_app() {
+  [[ $__CFBundleIdentifier == com.anthropic.* ]]
+}
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -42,7 +51,8 @@ autoload -Uz compinit
 compinit
 
 # Auto attach or launch tmux
-if ! is_in_vscode && [[ ! -n $TMUX && $- == *l* ]]; then
+if ! is_in_vscode && ! is_in_claude && ! is_spawned_by_claude_app \
+  && [[ ! -n $TMUX && $- == *l* ]] && [[ -o interactive ]] && [[ -t 0 && -t 1 ]]; then
   if tmux list-session > /dev/null 2>&1; then
     tmux attach-session
   else
